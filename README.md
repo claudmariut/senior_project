@@ -1,0 +1,106 @@
+# **SOURCE CODE FOR INTEGRATION OF MACHINE LEARNING (AI/ML) AND IoT FOR HOME AUTOMATION**
+## Facial Recognition and Gesture Recognition
+This project combines facial recognition and gesture recognition using OpenCV and scikit-image.
+
+## Folder Structure
+### Facial Recognition
+__1. captureImages.py__
+
+  - Captures images using your webcam to create a dataset for facial recognition.
+
+__2. createFaceDatabase.py__
+
+  - Creates a TinyDB database from the ATT faces dataset for training facial recognition.
+
+__3. facialDetectionTestPI.py__
+
+  - Uses a Raspberry Pi camera for real-time face detection.
+
+__4. jpgTopgm.py__
+
+  - Converts JPG images to PGM format for compatibility with the ATT faces dataset.
+
+__5. lbphTrainer.py__
+
+  - Trains an LBPH facial recognition model and saves it as a YAML file.
+
+__6. randomPeople.py__
+
+  - Processes images of random people for testing facial recognition.
+
+__7. scanFace.py__
+   
+ - Uses Haar cascades for face detection from the webcam feed.
+    - Usage:
+        - Run scanFace.py to access the webcam and detect faces.
+        - Adjust the script for specific resolutions or camera settings as needed.
+        - Press 'q' to exit the loop.
+        - 
+__8. verifyFace.py__
+
+  - Verifies faces in real-time using the trained LBPH recognizer.
+    - Usage:
+        - Ensure the LBPH recognizer is trained using lbphTrainer.py before running.
+        - Run verifyFace.py to access the webcam and verify faces.
+        - Recognized faces are displayed with a rectangle and person's name.
+        - Press 'q' to exit the loop.
+
+__9, verifyFaceStats.py__
+
+  - Evaluates the accuracy and performance of the facial recognition model.
+    - Usage:
+      - Run verifyFaceStats.py to assess the accuracy, classification report, and confusion matrix.
+      - Adjust the confidence threshold in the script based on your requirements.
+
+### Gesture Recognition
+__1. createGestureDatabase.py__
+
+  - Creates a TinyDB database from a dataset of hand gesture images.
+
+__2. knnTrainer.py__
+
+  - Trains a K-Nearest Neighbors (KNN) classifier for gesture recognition.
+
+__3. newGesture.py__
+
+  - Captures images of hand gestures to add to the gesture dataset.
+
+__4. verifyGesture.py__
+
+  - Verifies hand gestures in real-time using the trained KNN classifier.
+    - Usage:
+        - Ensure the KNN classifier is trained using knnTrainer.py before running.
+        - Run verifyGesture.py to access the webcam and verify hand gestures.
+        - Recognized gestures are displayed on the frame.
+        - Press 'q' to exit the loop.
+
+## Dependencies
+  - OpenCV
+    -     pip install opencv-python
+  - scikit-image
+    -     pip install scikit-image
+  - TinyDB
+    -     pip install tinydb
+  - scikit-learn
+    -     pip install scikit-learn
+
+## Usage
+__1. Facial Recognition__
+
+  - Follow the sequence of scripts: __createFaceDatabase.py__ -> __lbphTrainer.py__ -> __verifyFace.py__ -> __verifyFaceStats.py__.
+  - Adjust parameters in scanFace.py for specific camera settings.
+
+__2. Gesture Recognition__
+
+  - Follow the sequence of scripts: __createGestureDatabase.py__ -> __knnTrainer.py__ -> __verifyGesture.py__.
+  
+## Notes
+Ensure the dataset directories (__att_dataset__ and __gesture_dataset__) are correctly structured.
+Adjust parameters such as image resolution and model settings based on specific requirements.
+
+## Aknowledgments
+  - [ATT Faces Database](https://www.kasrl.org/jplab/)
+  - [OpenCV](https://opencv.org/)
+  - [scikit-image](https://scikit-image.org/)
+  - [TinyDB](https://tinydb.readthedocs.io/en/latest/)
+  - [scikit-learn](https://scikit-learn.org/stable/)
