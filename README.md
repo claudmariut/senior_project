@@ -73,6 +73,19 @@ __4. verifyGesture.py__
         - Run verifyGesture.py to access the webcam and verify hand gestures.
         - Recognized gestures are displayed on the frame.
         - Press 'q' to exit the loop.
+          
+### Home Assistant and Project Demo
+__1. switchLight.py__
+
+  - Controls a smart switch/light using MQTT for Home Assistant Integration.
+
+__2. projectDemo.py__
+
+  - Combines all the Machine Learning Models establishing communication with Home Assistant. (Implement a new Gesture Recognition Model)
+
+__3. restfulAPI.py__
+
+  - (In progress) New alternative to establish a better integration between the AI Module and Home Assistant.
 
 ## Dependencies
   - OpenCV
@@ -83,6 +96,8 @@ __4. verifyGesture.py__
     -     pip install tinydb
   - scikit-learn
     -     pip install scikit-learn
+  - Paho MQTT
+    -     pip install paho-mqtt
 
 ## Usage
 __1. Facial Recognition__
@@ -93,6 +108,10 @@ __1. Facial Recognition__
 __2. Gesture Recognition__
 
   - Follow the sequence of scripts: __createGestureDatabase.py__ -> __knnTrainer.py__ -> __verifyGesture.py__.
+
+__3. Project Demo__
+
+  - Run projectDemo.py, ensure faces database, face recognizer and haar cascade classifier are in the same directory.
   
 ## Notes
 Ensure the dataset directories (__att_dataset__ and __gesture_dataset__) are correctly structured.
@@ -104,3 +123,4 @@ Adjust parameters such as image resolution and model settings based on specific 
   - [scikit-image](https://scikit-image.org/)
   - [TinyDB](https://tinydb.readthedocs.io/en/latest/)
   - [scikit-learn](https://scikit-learn.org/stable/)
+  - [Paho MQTT](https://pypi.org/project/paho-mqtt/)
