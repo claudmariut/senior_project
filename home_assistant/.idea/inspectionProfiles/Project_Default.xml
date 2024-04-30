@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="cv2.face" />
+          <option value="cv2.face.LBPHFaceRecognizer_create.train" />
+          <option value="cv2.face.LBPHFaceRecognizer_create.save" />
+          <option value="cv2.face.LBPHFaceRecognizer_create.compute" />
+          <option value="cv2.face.LBPHFaceRecognizer_create.read" />
+          <option value="cv2.face.LBPHFaceRecognizer_create.predict" />
+          <option value="cv2.ml.KNearest_create" />
+          <option value="sklearn.neighbors._classification.KNeighborsClassifier.save" />
+          <option value="cv2.ml.KNearest_load" />
+          <option value="array.tolist" />
+          <option value="cv2.ml.write" />
+          <option value="cv2.ml.save" />
+          <option value="mediapipe.solutions" />
+          <option value="cv2.data.haarcascades" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

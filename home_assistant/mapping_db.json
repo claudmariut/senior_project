@@ -1,0 +1,34 @@
+{
+    "_default": {
+        "0": { 
+            "domain": "",
+            "entity_id": "",
+	    "service": ""
+        },
+        "1": {
+            "domain": "",
+            "entity_id": "",
+	    "service": ""
+        },
+        "2": {
+            "domain": "",
+            "entity_id": "",
+	    "service": ""
+        },
+        "3": {
+            "domain": "",
+            "entity_id": "",
+	    "service": ""
+        },
+        "4": {
+            "domain": "",
+            "entity_id": "",
+	    "service": ""
+        },
+	"5": {
+            "domain": "",
+            "entity_id": "",
+	    "service": ""
+        },
+    }
+}

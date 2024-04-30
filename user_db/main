@@ -1,0 +1,169 @@
+import configparser
+configparser.__name__
+'configparser'
+
+from concurrent.futures import process
+process.__name__
+'concurrent.futures.process'   
+#we import tiny db
+from tinydb import TinyDB, Query
+#import local file 
+import Home1 as h
+
+ #Create or load the TinyDB database
+db = TinyDB("home_automation.json")
+
+h.HomeAutomationDB(db)
+
+# Define the Devices table
+devices_table = db.table('devices')
+
+# Example Raspberry Pi device document:
+raspberry_pi_example = {
+    'id': 1,
+    'name': 'Raspberry Pi',
+    'type': 'Controller',
+    'status': 'Online'
+}
+
+# Example Doorbell Camera device document:
+doorbell_camera_example = {
+    'id': 2,
+    'name': 'Doorbell Camera',
+    'type': 'Camera',
+    'status': 'Online'
+}
+
+# Insert devices into the Devices table
+devices_table.insert(raspberry_pi_example)
+devices_table.insert(doorbell_camera_example)
+
+
+# Define the Sensors table
+sensors_table = db.table('sensors')
+
+# Example Motion Sensor document:
+motion_sensor_example = {
+    'id': 1,
+    'name': 'Motion Sensor',
+    'type': 'Motion',
+    'status': 'Active'
+}
+
+# Insert sensors into the Sensors table
+sensors_table.insert(motion_sensor_example)
+
+# Define the Camera Data table
+camera_data_table = db.table('camera_data')
+
+# Example Camera Data document:
+camera_data_example = {
+    'timestamp': '2023-11-16 12:00:00',
+    'image_path': '/path/to/captured_image.jpg',
+    'device_id': 2  # Foreign key referencing the Doorbell Camera
+}
+
+# Insert camera data into the Camera Data table
+camera_data_table.insert(camera_data_example)
+
+class HomeAutomationDB:
+    def __init__(self, db_path='home_automation_db.json'):
+        self.db = TinyDB(db_path)
+        self.devices_table = self.db.table('devices')
+        self.Device = Query()
+
+    def add_device(self, name, device_type, status):
+        self.devices_table.insert({'name': name, 'type': device_type, 'status': status})
+
+    def get_all_devices(self):
+        return self.devices_table.all()
+
+    def get_device_by_name(self, name):
+        return self.devices_table.search(self.Device.name == name)
+
+    def update_device_status(self, name, new_status):
+        self.devices_table.update({'status': new_status}, self.Device.name == name)
+
+    def remove_device(self, name):
+        self.devices_table.remove(self.Device.name == name)
+
+    def close(self):
+        self.db.close()
+
+# Example usage
+db_interface = HomeAutomationDB()
+
+db_interface.add_device('Light1', 'Light', 'Off')
+db_interface.add_device('Thermostat1', 'Thermostat', '22°C')
+
+print("All Devices:")
+print(db_interface.get_all_devices())
+
+print("\nGet Device by Name (Light1):")
+print(db_interface.get_device_by_name('Light1'))
+
+print("\nUpdate Device Status (Light1):")
+db_interface.update_device_status('Light1', 'On')
+print(db_interface.get_device_by_name('Light1'))
+
+print("\nRemove Device (Thermostat1):")
+db_interface.remove_device('Thermostat1')
+print(db_interface.get_all_devices())
+
+# Close the database connection
+db_interface.close()
+
+devices_table = db.table('devices')
+
+# Define a Query object for easy querying
+Device = Query()
+
+# # Function to add a device to the 'devices' table
+# def add_device(name, device_type, status):
+#     devices_table.insert({'name': name, 'type': device_type, 'status': status})
+
+
+
+def add_device(name, device_type, status):
+    db.insert({'name': name, 'type': device_type, 'status': status})
+
+# Function to get all devices from the database
+def get_all_devices():
+    return db.all()
+
+# Function to get a specific device by name
+def get_device_by_name(name):
+    return db.search(Device.name == name)
+
+# Function to update the status of a device
+def update_device_status(name, new_status):
+    db.update({'status': new_status}, Device.name == name)
+
+# Function to remove a device from the database
+def remove_device(name):
+    db.remove(Device.name == name)
+
+# Example usage
+add_device('Light1', 'Light', 'Off')
+add_device('Thermostat1', 'Thermostat', '22°C')
+
+print("All Devices:")
+print(get_all_devices())
+
+print("\nGet Device by Name (Light1):")
+print(get_device_by_name('Light1'))
+
+print("\nUpdate Device Status (Light1):")
+update_device_status('Light1', 'On')
+print(get_device_by_name('Light1'))
+
+print("\nRemove Device (Thermostat1):")
+remove_device('Thermostat1')
+print(get_all_devices())
+
+# Close the database connection
+db.close()
+
+
+# Create or open the TinyDB database
+
