@@ -3,7 +3,7 @@
 This project innovatively combines facial and gesture recognition in doorbell cameras, redefining home security. Leveraging LBPH(Local Binary Pattern Histogram) and CNN, the system identifies visitors through facial features and interprets user gestures for intuitive control. The process involves database creation, mobile app development, machine learning model training, and real-time implementation. All integrated  in a Raspberry Pi microcontroller.
 
 ## Folder Structure
-### Facial Recognition
+### Facial Recognition v1.3 (Individual Files used by Backend Server)
 __1. captureImages.py__
 
   - Captures images using your webcam to create a dataset for facial recognition.
@@ -52,7 +52,7 @@ __9, verifyFaceStats.py__
       - Run verifyFaceStats.py to assess the accuracy, classification report, and confusion matrix.
       - Adjust the confidence threshold in the script based on your requirements.
 
-### Gesture Recognition
+### Gesture Recognition v1.1 (OLD Version when using KNN instead of CNN) - No required
 __1. createGestureDatabase.py__
 
   - Creates a TinyDB database from a dataset of hand gesture images.
