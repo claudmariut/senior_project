@@ -1,5 +1,5 @@
 # **SOURCE CODE FOR INTEGRATION OF MACHINE LEARNING (AI/ML) AND IoT FOR HOME AUTOMATION**
-## About the Project
+## Project Summary
 This project innovatively combines facial and gesture recognition in doorbell cameras, redefining home security. Leveraging LBPH(Local Binary Pattern Histogram) and CNN, the system identifies visitors through facial features and interprets user gestures for intuitive control. The process involves database creation, mobile app development, machine learning model training, and real-time implementation. All integrated  in a Raspberry Pi microcontroller.
 
 ## Folder Structure
