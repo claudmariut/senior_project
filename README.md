@@ -110,6 +110,15 @@ __8. mainProgramFile.py__
   - This file requires the different yml files on the directory as well as json files to work.
 
 
+### Mobile Application
+__Contains a REAMDE file with a link to the source code and mobile application. Another README file can be found on the mobile application folder.__
+
+### Backend Server
+__Contains a REAMDE file with a link to the source code and backend server. Another README file can be found on the backend server folder.__
+
+### Live Demo Old (Old PC based demo using KNN - Discontinued)
+
+
 ## Dependencies
   - OpenCV
     -     pip install opencv-python
@@ -121,20 +130,7 @@ __8. mainProgramFile.py__
     -     pip install scikit-learn
   - Paho MQTT
     -     pip install paho-mqtt
-
-## Usage
-__1. Facial Recognition__
-
-  - Follow the sequence of scripts: __createFaceDatabase.py__ -> __lbphTrainer.py__ -> __verifyFace.py__ -> __verifyFaceStats.py__.
-  - Adjust parameters in scanFace.py for specific camera settings.
-
-__2. Gesture Recognition__
-
-  - Follow the sequence of scripts: __createGestureDatabase.py__ -> __knnTrainer.py__ -> __verifyGesture.py__.
-
-__3. Project Demo__
-
-  - Run projectDemo.py, ensure faces database, face recognizer and haar cascade classifier are in the same directory.
+    - 
   
 ## Notes
 Ensure the dataset directories (__att_dataset__ and __gesture_dataset__) are correctly structured.
