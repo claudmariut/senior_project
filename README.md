@@ -74,18 +74,41 @@ __4. verifyGesture.py__
         - Recognized gestures are displayed on the frame.
         - Press 'q' to exit the loop.
           
-### Home Assistant and Project Demo
-__1. switchLight.py__
+### Home Assistant and Project Demo (PC Based)
+__1. get_entities.py__
 
-  - Controls a smart switch/light using MQTT for Home Assistant Integration.
+  - Connects to Home Assistant Server and requests all entities information from local network.
 
-__2. projectDemo.py__
+__2. get_services.py__
 
-  - Combines all the Machine Learning Models establishing communication with Home Assistant. (Implement a new Gesture Recognition Model)
+  - Connects to Home Assistant Server and requests all services information.
 
-__3. restfulAPI.py__
+__3. entitiesDB.py and entities_db.json__ 
 
-  - (In progress) New alternative to establish a better integration between the AI Module and Home Assistant.
+  - Uses get_entities.py to create/update a new TinyDB database called entities_db.
+
+__4. servicesDB.py and services_db.json__ 
+
+  - Uses get_entities.py to create/update a new TinyDB database called services_db.
+
+__5. gestureMatching.py__ 
+
+  - Demo that runs on the terminal simulating mobile application gesture mapping with entity/ies and service call selection.
+
+__6. callServices.py__ 
+
+  - Function to execute a service on Home Assistant server. Requires domain, entity id and service call information (Used by Main Program File).
+
+__7. mapping_db.json__ 
+
+  - Mapping database, used by backend server and mobile application to store user configuration about the relation between gestures, entities and services.
+
+__8. mainProgramFile.py__ 
+
+  - Main Program File that runs the AI Module on the backend server. (This version can be run on PC for demo purposes)
+  - If used for demo, make sure dependencies are install and you first run the facial recognition files to update the facial recognizer.
+  - This file requires the different yml files on the directory as well as json files to work.
+
 
 ## Dependencies
   - OpenCV
